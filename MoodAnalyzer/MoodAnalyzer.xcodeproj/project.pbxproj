@@ -14,6 +14,7 @@
 		84FD92502475BA5D0051ACD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84FD924F2475BA5D0051ACD5 /* Assets.xcassets */; };
 		84FD92532475BA5D0051ACD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FD92512475BA5D0051ACD5 /* LaunchScreen.storyboard */; };
 		84FD925E2475BA5D0051ACD5 /* MoodAnalyzerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FD925D2475BA5D0051ACD5 /* MoodAnalyzerTests.swift */; };
+		84FD92692475BB370051ACD5 /* Analyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FD92682475BB370051ACD5 /* Analyzer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		84FD92592475BA5D0051ACD5 /* MoodAnalyzerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodAnalyzerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FD925D2475BA5D0051ACD5 /* MoodAnalyzerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodAnalyzerTests.swift; sourceTree = "<group>"; };
 		84FD925F2475BA5D0051ACD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84FD92682475BB370051ACD5 /* Analyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analyzer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				84FD924F2475BA5D0051ACD5 /* Assets.xcassets */,
 				84FD92512475BA5D0051ACD5 /* LaunchScreen.storyboard */,
 				84FD92542475BA5D0051ACD5 /* Info.plist */,
+				84FD92682475BB370051ACD5 /* Analyzer.swift */,
 			);
 			path = MoodAnalyzer;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				84FD924B2475BA5A0051ACD5 /* ViewController.swift in Sources */,
 				84FD92472475BA5A0051ACD5 /* AppDelegate.swift in Sources */,
 				84FD92492475BA5A0051ACD5 /* SceneDelegate.swift in Sources */,
+				84FD92692475BB370051ACD5 /* Analyzer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
