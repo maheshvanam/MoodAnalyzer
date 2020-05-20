@@ -9,6 +9,9 @@
 import Foundation
 class Analyzer{
     func analyseMood(message:String)->String{
-        return "SAD"
+        if message.contains("Sad"){
+            return "SAD"
+        }
+        return "HAPPY"
     }
 }
