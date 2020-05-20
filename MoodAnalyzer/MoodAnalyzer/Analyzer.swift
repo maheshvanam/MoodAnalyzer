@@ -13,7 +13,7 @@ class Analyzer{
         self.message=message
     }
     func analyseMood()->String{
-        if message.contains("Sad"){
+        if message.contains("Sad") || message.contains("Happy"){
             return "SAD"
         }
         return "HAPPY"
