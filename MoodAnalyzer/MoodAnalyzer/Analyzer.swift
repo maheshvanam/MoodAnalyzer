@@ -8,7 +8,11 @@
 
 import Foundation
 class Analyzer{
-    func analyseMood(message:String)->String{
+    var message:String
+    init(message:String){
+        self.message=message
+    }
+    func analyseMood()->String{
         if message.contains("Sad"){
             return "SAD"
         }
