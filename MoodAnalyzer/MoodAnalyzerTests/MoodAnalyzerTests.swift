@@ -27,4 +27,9 @@ class MoodAnalyzerTests: XCTestCase {
         let mood = analyzer.analyseMood()
         XCTAssertEqual("SAD", mood)
     }
+    func test_givenAMessage_whenGivenANilMood_ShouldReturnSAD(){
+        let analyzer = Analyzer(message: nil)
+        let mood = analyzer.analyseMood()
+        XCTAssertEqual("HAPPY", mood)
+    }
 }
