@@ -44,7 +44,7 @@ class MoodAnalyzerTests: XCTestCase {
         }
         
     }
-    func test_givenAMessage_whenGivenANilMood_ShouldReturnCustomError(){
+    func test_givenAMessage_whenGivenNilMood_ShouldReturnCustomException(){
         do{
             let analyzer = Analyzer(message: nil)
             let mood = try analyzer.analyseMood()
@@ -54,4 +54,14 @@ class MoodAnalyzerTests: XCTestCase {
             XCTAssertEqual("nilMessage", "\(error)")
         }
     }
+    func test_givenAMessage_whenGivenEmptyMood_ShouldReturnCustomExceptin(){
+           do{
+               let analyzer = Analyzer(message: "")
+               let mood = try analyzer.analyseMood()
+               XCTAssertEqual("HAPPY", mood)
+           }
+           catch{
+               XCTAssertEqual("emptyMessage", "\(error)")
+           }
+       }
 }

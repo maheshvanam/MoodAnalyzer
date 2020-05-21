@@ -9,4 +9,5 @@
 import Foundation
 enum MoodAnalyzerError : Error{
     case nilMessage
+    case emptyMessage
 }
