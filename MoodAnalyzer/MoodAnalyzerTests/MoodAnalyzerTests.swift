@@ -11,25 +11,47 @@ import XCTest
 
 class MoodAnalyzerTests: XCTestCase {
     func test_givenAMessage_whenGivenSadMood_ShouldReturnSAD(){
+        do{
         let analyzer=Analyzer(message: "i am in Sad Mood")
-        let mood = analyzer.analyseMood()
+        let mood = try analyzer.analyseMood()
         XCTAssertEqual("SAD", mood)
+        }
+        catch{
+            print(error)
+        }
+            
     }
     
     func test_givenAMessage_whenGivenAnyMood_ShouldReturnHappy(){
-        let analyzer=Analyzer(message: "i am in Any Mood")
-        let mood = analyzer.analyseMood()
-        XCTAssertEqual("HAPPY", mood)
+        do{
+            let analyzer=Analyzer(message: "i am in Any Mood")
+            let mood = try analyzer.analyseMood()
+            XCTAssertEqual("HAPPY", mood)
+        }
+        catch{
+            print(error)
+        }
     }
     
     func test_givenAMessage_whenGivenAHappyMood_ShouldReturnSAD(){
-        let analyzer=Analyzer(message: "i am in Happy Mood")
-        let mood = analyzer.analyseMood()
-        XCTAssertEqual("SAD", mood)
+        do{
+            let analyzer=Analyzer(message: "i am in Happy Mood")
+            let mood = try analyzer.analyseMood()
+            XCTAssertEqual("SAD", mood)
+        }
+        catch{
+            print(error)
+        }
+        
     }
-    func test_givenAMessage_whenGivenANilMood_ShouldReturnSAD(){
-        let analyzer = Analyzer(message: nil)
-        let mood = analyzer.analyseMood()
-        XCTAssertEqual("HAPPY", mood)
+    func test_givenAMessage_whenGivenANilMood_ShouldReturnCustomError(){
+        do{
+            let analyzer = Analyzer(message: nil)
+            let mood = try analyzer.analyseMood()
+            XCTAssertEqual("HAPPY", mood)
+        }
+        catch{
+            XCTAssertEqual("nilMessage", "\(error)")
+        }
     }
 }

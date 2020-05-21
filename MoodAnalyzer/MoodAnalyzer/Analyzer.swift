@@ -16,9 +16,9 @@ class Analyzer{
     init(message:String?){
         self.message=message
     }
-    func analyseMood() ->String {
+    func analyseMood() throws ->String {
         if message == nil{
-            return "HAPPY"
+            throw MoodAnalyzerError.nilMessage
         }
         else if message!.contains("Sad") || message!.contains("Happy"){
             return "SAD"
