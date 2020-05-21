@@ -10,58 +10,38 @@ import XCTest
 @testable import MoodAnalyzer
 
 class MoodAnalyzerTests: XCTestCase {
-    func test_givenAMessage_whenGivenSadMood_ShouldReturnSAD(){
-        do{
+    
+    func test_givenAMessage_whenGivenSadMood_ShouldReturnSAD() throws {
         let analyzer=Analyzer(message: "i am in Sad Mood")
         let mood = try analyzer.analyseMood()
         XCTAssertEqual("SAD", mood)
-        }
-        catch{
-            print(error)
-        }
-            
     }
     
-    func test_givenAMessage_whenGivenAnyMood_ShouldReturnHappy(){
-        do{
-            let analyzer=Analyzer(message: "i am in Any Mood")
-            let mood = try analyzer.analyseMood()
-            XCTAssertEqual("HAPPY", mood)
-        }
-        catch{
-            print(error)
-        }
+    func test_givenAMessage_whenGivenAnyMood_ShouldReturnHappy() throws {
+        let analyzer=Analyzer(message: "i am in Any Mood")
+        let mood = try analyzer.analyseMood()
+        XCTAssertEqual("HAPPY", mood)
     }
     
-    func test_givenAMessage_whenGivenAHappyMood_ShouldReturnSAD(){
-        do{
-            let analyzer=Analyzer(message: "i am in Happy Mood")
-            let mood = try analyzer.analyseMood()
-            XCTAssertEqual("SAD", mood)
-        }
-        catch{
-            print(error)
-        }
-        
+    func test_givenAMessage_whenGivenAHappyMood_ShouldReturnSAD() throws {
+        let analyzer=Analyzer(message: "i am in Happy Mood")
+        let mood = try analyzer.analyseMood()
+        XCTAssertEqual("HAPPY", mood)
     }
+    
     func test_givenAMessage_whenGivenNilMood_ShouldReturnCustomException(){
-        do{
-            let analyzer = Analyzer(message: nil)
-            let mood = try analyzer.analyseMood()
-            XCTAssertEqual("HAPPY", mood)
-        }
-        catch{
-            XCTAssertEqual("nilMessage", "\(error)")
+        let analyzer = Analyzer(message: nil)
+        
+        XCTAssertThrowsError( try analyzer.analyseMood()){
+            error in XCTAssertEqual(error as! MoodAnalyzerError, MoodAnalyzerError.nilMessage)
         }
     }
+    
     func test_givenAMessage_whenGivenEmptyMood_ShouldReturnCustomExceptin(){
-           do{
-               let analyzer = Analyzer(message: "")
-               let mood = try analyzer.analyseMood()
-               XCTAssertEqual("HAPPY", mood)
-           }
-           catch{
-               XCTAssertEqual("emptyMessage", "\(error)")
-           }
-       }
+        let analyzer = Analyzer(message: "")
+        
+        XCTAssertThrowsError( try analyzer.analyseMood()){
+            error in XCTAssertEqual(error as! MoodAnalyzerError, MoodAnalyzerError.emptyMessage)
+        }
+    }
 }

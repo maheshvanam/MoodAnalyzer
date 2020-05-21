@@ -7,7 +7,8 @@
 //
 
 import Foundation
-enum MoodAnalyzerError : Error{
+
+enum MoodAnalyzerError : Error {
     case nilMessage
     case emptyMessage
 }

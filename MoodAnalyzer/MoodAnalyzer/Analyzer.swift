@@ -7,25 +7,32 @@
 //
 
 import Foundation
-class Analyzer{
+
+class Analyzer {
     
-    var message:String?
-    init(){
+    var message : String?
+    
+    init() {
         message = nil
     }
-    init(message:String?){
+    
+    init(message : String?) {
         self.message=message
     }
+    
     func analyseMood() throws ->String {
         
         if message == nil{
             throw MoodAnalyzerError.nilMessage
         }
-        else if message!.isEmpty{
+        if message!.isEmpty{
             throw MoodAnalyzerError.emptyMessage
         }
-        else if message!.contains("Sad") || message!.contains("Happy"){
+        if message!.contains("Sad"){
             return "SAD"
+        }
+        if message!.contains("Happy"){
+            return "HAPPY"
         }
         return "HAPPY"
     }
